@@ -1,0 +1,22 @@
+{
+  "name": "crypto-dude",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js",
+    "build": "zip -r cryptodude.zip .",
+    "upload": "aws lambda update-function-code --function-name CryptoDude --zip-file fileb://cryptodude.zip",
+    "publish": "npm run build && npm run upload"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-sdk": "^1.0.24",
+    "node-coinmarketcap": "^0.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.8"
+  }
+}
